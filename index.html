@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2B2B2B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Billing">
+<title>Abhisan Billing</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  html,body{margin:0;height:100%;background:#2B2B2B;overflow:hidden}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
+  #msg{position:fixed;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;
+       gap:16px;color:#fff;font:16px/1.5 system-ui,sans-serif;text-align:center;padding:24px}
+  #msg a{color:#2B2B2B;background:#E8B04B;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<iframe id="app" src="https://script.google.com/macros/s/AKfycbyNryZz31Y0iWWC02D4mBPKciN3nGfpckPNSjQEyIRN9ksNpEATQmE9p8uOb-t_XmDzww/exec" allow="clipboard-write; downloads"></iframe>
+<div id="msg">
+  <div>App load aagala. Google account-la login pannunga.</div>
+  <a href="https://script.google.com/macros/s/AKfycbyNryZz31Y0iWWC02D4mBPKciN3nGfpckPNSjQEyIRN9ksNpEATQmE9p8uOb-t_XmDzww/exec" target="_blank" rel="noopener">Login / Open in browser</a>
+</div>
+<script>
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+  if (!navigator.onLine) { document.getElementById('app').style.display='none'; document.getElementById('msg').style.display='flex'; document.querySelector('#msg div').textContent='Internet illa. Connect panni thirumba open pannunga.'; }
+</script>
+</body>
+</html>
